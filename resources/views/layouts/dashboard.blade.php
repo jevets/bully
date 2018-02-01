@@ -10,7 +10,7 @@
     <div class="column is-hidden-mobile is-one-quarter-tablet is-one-fifth-widescreen is-2-fullhd l-sidebar">
       <div class="inner">
         @section('sidebar')
-          @include('bully::partials.menu')
+          @include('bully::partials.menu', ['menu' => config('bully.menus.main')])
         @show
       </div>
     </div>

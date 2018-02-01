@@ -14,4 +14,31 @@ return [
 
     'styles' => true,
     'scripts' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Menus
+    |--------------------------------------------------------------------------
+    |
+    | A static of array of menu items.
+    |
+    */
+
+    'menus' => [
+        'main' => [
+            'label' => 'Main Menu',
+            'items' => [[
+                'label' => 'Home',
+                'url' => '/',
+                'can' => '',
+            ], [
+                'label' => 'Login',
+                'url' => '/login',
+                // 'route' => 'login',
+            ], [
+                'label' => 'My Account',
+                'url' => '/home',
+            ]]
+        ],
+    ]
 ];
