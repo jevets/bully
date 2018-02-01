@@ -15,7 +15,18 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->assets();
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bully');
+        $this->views();
+    }
+
+    /**
+     * Get an absolute path to this package
+     *
+     * @param string $path
+     * @return string
+     */
+    private function path($path = null)
+    {
+        return __DIR__ . "/../{$path}";
     }
 
     /**
@@ -26,13 +37,10 @@ class ServiceProvider extends BaseServiceProvider
     protected function config()
     {
         $this->publishes([
-            __DIR__ . '/../config/bully.php' => config_path('bully.php'),
+            $this->path('config/bully.php') => config_path('bully.php'),
         ], 'bully-config');
 
-        $this->mergeConfigFrom(
-            __DIR__ . '/../config/bully.php',
-            'bully'
-        );
+        $this->mergeConfigFrom($this->path('config/bully.php'), 'bully');
     }
 
     /**
@@ -43,7 +51,21 @@ class ServiceProvider extends BaseServiceProvider
     protected function assets()
     {
         $this->publishes([
-            __DIR__ . '/../dist' => public_path('bully')
+            $this->path('dist') => public_path('bully')
         ], 'bully-assets');
+    }
+
+    /**
+     * Load and publish views
+     *
+     * @return void
+     */
+    protected function views()
+    {
+        $this->loadViewsFrom($this->path('resources/views'), 'bully');
+
+        $this->publishes([
+            $this->path('resources/views') => resource_path('views/vendor/bully')
+        ], 'bully-views');
     }
 }

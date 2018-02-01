@@ -1,18 +1,26 @@
 @extends('bully::layouts.master')
 
+@push('styles')
+<style>
+.links {
+  font-size: 0.9rem;
+}
+.links a {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+</style>
+@endpush
+
 @section('content')
-  @component('bully::components.hero', ['class' => 'is-fullheight is-light'])
+  @component('bully::components.hero')
+    @slot('class', 'is-primary is-bold is-fullheight')
     @slot('head')
       <div class="container">
         @component('bully::components.navbar')
           @slot('brand', config('app.name', 'Bully'))
           @slot('brandUrl', url('/'))
           @slot('brandClass', 'has-text-weight-bold')
-          @slot('start')
-            <a href="#" class="navbar-item">Start Item</a>
-            <a href="#" class="navbar-item">Start Item</a>
-            <a href="#" class="navbar-item">Start Item</a>
-          @endslot
           @slot('end')
             @if (Route::has('login'))
               @auth
@@ -24,37 +32,24 @@
             @endif
           @endslot
         @endcomponent
-        {{--
-        <nav class="navbar is-light">
-          <div class="navbar-brand">
-            <a href="{{ url('/') }}" class="navbar-item has-text-weight-bold">
-              {{ config('app.name', 'Bully') }}
-            </a>
-            <button class="navbar-burger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <div class="navbar-menu">
-            <div class="navbar-end">
-              @if (Route::has('login'))
-                @auth
-                  <a href="{{ url('/home') }}" class="navbar-item">Home</a>
-                @else
-                  <a href="{{ route('login') }}" class="navbar-item">Login</a>
-                  <a href="{{ route('register') }}" class="navbar-item">Register</a>
-                @endauth
-              @endif
-            </div>
-          </div>
-        </nav>
-        --}}
       </div>
     @endslot
 
     <div class="container has-text-centered">
-      <h1 class="title is-1">Bully</h1>
+      <p>
+        <img src="{{ asset('bully/img/logo--white--480w.png') }}" alt="Bully" width="120">
+      </p>
+      <h1 class="title is-size-1">
+        {{ config('app.name', 'Bully') }}
+      </h1>
+      <h2 class="subtitle">
+        Laravel theme with Bulma, Buefy, and a few helpers
+      </h2>
+      <div class="links block is-uppercase">
+        <a href="https://github.com/jevets/bully">Docs</a>
+        <a href="https://bulma.io">Bulma</a>
+        <a href="https://buefy.github.io/#/">Buefy</a>
+      </div>
     </div>
   @endcomponent
 @endsection

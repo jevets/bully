@@ -5,3 +5,5 @@ mix.setPublicPath('dist')
 mix.sass('resources/assets/sass/bully.scss', 'dist/css/bully.css')
 
 mix.js('resources/assets/js/bully.js', 'dist/js/bully.js')
+
+mix.copy('resources/assets/img', 'dist/img')
