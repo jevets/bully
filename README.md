@@ -8,6 +8,8 @@ And is Subject to Change
 
 Bully is a [Bulma](bulma)-based admin theme for [Laravel](laravel) 5.5.
 
+## Screenshots
+
 ## Install
 
 > Installation requires manual editing of your Laravel's `composer.json` file, at least until the repo is set up on packagist and available via `composer require`.

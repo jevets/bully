@@ -1,14 +1,13 @@
 @php
-$colorDefault = 'is-transparent';
 $toggleTargetId = $toggleTargetId ?? str_random();
 @endphp
-<nav class="navbar {{ $color or $colorDefault }} {{ $class or '' }}">
+<nav class="navbar {{ $color or '' }} {{ $class or '' }}">
   @isset ($brand)
     <div class="navbar-brand">
       <a href="{{ $brandUrl or url('/') }}" class="navbar-item {{ $brandClass or '' }}">
         {{ $brand }}
       </a>
-      <button class="button navbar-burger {{ $color or $colorDefault }}" data-target="{{ $toggleTargetId }}">
+      <button class="button navbar-burger {{ $color or '' }}" data-target="{{ $toggleTargetId }}">
         <span></span>
         <span></span>
         <span></span>
