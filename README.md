@@ -4,9 +4,9 @@ Bully is a [Bulma](bulma)-based admin theme for [Laravel](laravel) 5.5.
 
 ## Install
 
-> Installation is manual (requires editing `composer.json`), until the repo is set up on packagist and available via `composer require`.
+> Installation requires manual editing of your Laravel's `composer.json` file, at least until the repo is set up on packagist and available via `composer require`.
 
-Add the package to your Laravel project's `composer.json`:
+Require the package and defined the repository in your Laravel project's `composer.json`:
 
 ```json
 "require": {
@@ -22,10 +22,25 @@ Add the package to your Laravel project's `composer.json`:
 
 Then run `composer update` or `composer install`.
 
+### Publish the assets
+
 **You must publish the compiled assets** unless you're customizing, which includes a stylesheet and a few scripts.
 
 ```sh
-php artisan vendor:publish --provider="Jevets\Bully\ServiceProvider::class"
+php artisan vendor:publish
+# select the option for [bully-assets]
+```
+
+This will publish a `bully` folder to your public directory, with the following files:
+
+```
+public/
+  bully/
+    css/
+      bully.css
+    img/
+    js/
+      bully.js
 ```
 
 ## Customize
@@ -92,6 +107,30 @@ Example Usage:
 @component('bully::components.notification')
   @slot('color', 'is-danger')
   <p>You just won $1,000!</p>
+@endcomponent
+```
+
+### Layout Components
+
+#### Hero Card Narrow
+
+`components/layouts/hero-card-narrow.blade.php`
+
+- See `views/auth/*.blade.php` for more thorough examples
+
+Example Usage:
+
+```php
+@component('bully::components.layouts.hero-narrow-card')
+  @slot('title', 'Login')
+
+  <!-- injected into card content -->
+  <p>Hello, World!</p>
+
+  @slot('foot')
+    <!-- centered block below card -->
+    <a href="#">Go elsewhere</a>
+  @endslot
 @endcomponent
 ```
 
