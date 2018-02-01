@@ -37,7 +37,7 @@
 
     <div class="container has-text-centered">
       <p>
-        <img src="{{ asset('bully/img/logo--white--480w.png') }}" alt="Bully" width="120">
+        <img src="{{ asset('bully/img/logo--white--480w.png') }}" alt="Bully" width="90">
       </p>
       <h1 class="title is-size-1">
         {{ config('app.name', 'Bully') }}

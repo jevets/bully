@@ -25,6 +25,14 @@
     @endif
   </div>
   <div class="field">
+    <div class="control">
+      <label for="remember" class="checkbox">
+        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+        Remember Me
+      </label>
+    </div>
+  </div>
+  <div class="field">
     <button type="submit" class="button is-info is-fullwidth">
       Login
     </button>
