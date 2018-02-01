@@ -128,7 +128,7 @@ Example Usage:
 
 Example Usage:
 
-```php
+```blade
 @component('bully::components.layouts.hero-narrow-card')
   @slot('title', 'Login')
 
@@ -143,6 +143,8 @@ Example Usage:
 ```
 
 ## CHANGELOG
+
+- 2018.02.01 Initial Offering
 
 ## Links
 
