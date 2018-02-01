@@ -8,7 +8,7 @@ And is Subject to Change
 
 Bully is a [Bulma](bulma)-based admin theme for [Laravel](laravel) 5.5.
 
-![screenshot](https://github.com/jevets/bully/tree/master/resources/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/jevets/bully/master/resources/screenshot.png)
 
 ## Install
 
