@@ -16,6 +16,8 @@ class ServiceProvider extends BaseServiceProvider
         $this->assets();
 
         $this->views();
+
+        $this->commands();
     }
 
     /**
@@ -67,5 +69,19 @@ class ServiceProvider extends BaseServiceProvider
         $this->publishes([
             $this->path('resources/views') => resource_path('views/vendor/bully')
         ], 'bully-views');
+    }
+
+    /**
+     * Register artisan commands
+     *
+     * @return void
+     */
+    protected function commands()
+    {
+        // if ($this->app->runningInConsole()) {
+        //     $this->commands([
+        //         MakeAuthCommand::class,
+        //     ]);
+        // }
     }
 }
