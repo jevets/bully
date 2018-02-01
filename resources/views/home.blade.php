@@ -9,10 +9,12 @@
           <div class="card">
             <div class="card-content">
               @if (session('status'))
-                <div class="notification is-success">
+                @component('bully::components.notification')
+                  @slot('color', 'is-success')
                   {{ session('status')}}
-                </div>
+                @endcomponent
               @endif
+
               <p>You are logged in!</p>
             </div>
           </div>

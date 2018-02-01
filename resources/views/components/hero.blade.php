@@ -1,4 +1,4 @@
-<section class="hero {{ $class or '' }}">
+<section class="hero {{ $color or '' }} {{ $class or '' }}">
   @isset ($head)
     <header class="hero-head">
       {{ $head }}

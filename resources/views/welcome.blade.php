@@ -14,7 +14,8 @@
 
 @section('content')
   @component('bully::components.hero')
-    @slot('class', 'is-primary is-bold is-fullheight')
+    @slot('color', 'is-primary')
+    @slot('class', 'is-bold is-fullheight')
     @slot('head')
       <div class="container">
         @component('bully::components.navbar')

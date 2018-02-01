@@ -1,7 +1,7 @@
 @php
 $colorDefault = 'is-transparent';
 @endphp
-<nav class="navbar {{ $color or $colorDefault }}">
+<nav class="navbar {{ $color or $colorDefault }} {{ $class or '' }}">
   @isset ($brand)
     <div class="navbar-brand">
       <a href="{{ $brandUrl or url('/') }}" class="navbar-item {{ $brandClass or '' }}">
@@ -21,6 +21,7 @@ $colorDefault = 'is-transparent';
         {{ $start }}
       </div>
     @endisset
+
     @isset ($end)
       <div class="navbar-end">
         {{ $end }}
