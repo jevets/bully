@@ -12,6 +12,7 @@
       <p class="help is-danger">{{ $errors->first('email') }}</p>
     @endif
   </div>
+
   <div class="field">
     <label for="password" class="label sr-only">Password</label>
     <div class="control has-icons-left">
@@ -24,6 +25,7 @@
       <p class="help is-danger">{{ $errors->first('password') }}</p>
     @endif
   </div>
+
   <div class="field">
     <div class="control">
       <label for="remember" class="checkbox">
