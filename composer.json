@@ -1,0 +1,27 @@
+{
+    "name": "jevets/bully",
+    "description": "Bulma-based admin theme for Laravel",
+    "keywords": ["bulma", "admin", "theme", "laravel"],
+    "authors": [
+        {
+            "name": "Steve Jamesson",
+            "homepage": "https://github.com/jevets"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jevets\\Bully\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jevets\\Bully\\ServiceProvider"
+            ]
+        }
+    }
+}
