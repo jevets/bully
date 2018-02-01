@@ -1,3 +1,9 @@
+# Work In Progress
+
+And is Subject to Change
+
+---
+
 # Bully
 
 Bully is a [Bulma](bulma)-based admin theme for [Laravel](laravel) 5.5.
