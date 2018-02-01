@@ -11,18 +11,28 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
+        $this->config();
+
+        $this->assets();
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bully');
+    }
+
+    /**
+     * MErge config and offer publishable config file
+     *
+     * @return void
+     */
+    protected function config()
+    {
         $this->publishes([
             __DIR__ . '/../config/bully.php' => config_path('bully.php'),
-        ], 'config');
+        ], 'bully-config');
 
         $this->mergeConfigFrom(
             __DIR__ . '/../config/bully.php',
             'bully'
         );
-
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bully');
-
-        $this->publishAssets();
     }
 
     /**
@@ -30,8 +40,10 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    protected function publishAssets()
+    protected function assets()
     {
-        //
+        $this->publishes([
+            __DIR__ . '/../dist' => public_path('bully')
+        ], 'bully-assets');
     }
 }
