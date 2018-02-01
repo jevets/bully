@@ -1,1 +1,1 @@
-// import Vue from 'vue'
+import './navbar-toggle'

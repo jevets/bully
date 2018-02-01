@@ -1,6 +1,9 @@
 @extends('bully::layouts.master')
 
-@section('navbar')
-  @include('bully::partials.navbar')
-@show
+@section('content')
+  @section('navbar')
+    @include('bully::partials.navbar')
+  @show
 
+  @yield('content')
+@overwrite

@@ -51,6 +51,8 @@ Bully includes a few [Blade](blade) [components](blade-components) out of the bo
 
 ### Navbar
 
+> todo: document @slot('toggleTargetId', 'my-special-target') for menu toggling if including default bully.js
+
 `components/navbar.blade.php`
 
 Example Usage:

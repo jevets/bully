@@ -1,4 +1,6 @@
 @component('bully::components.navbar')
+  @slot('color', 'is-dark')
+  @slot('toggleTargetId', 'my-special-target')
 
   @slot('brand', config('app.name', 'Bully'))
   @slot('brandClass', 'has-text-weight-bold')

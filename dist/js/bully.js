@@ -68,17 +68,51 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(2);
+__webpack_require__(3);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// import Vue from 'vue'
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar_toggle__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar_toggle___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__navbar_toggle__);
+
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+// Adapted from https://bulma.io/documentation/components/navbar/
+
+document.addEventListener('DOMContentLoaded', function () {
+  var $burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  if ($burgers.length > 0) {
+    $burgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
