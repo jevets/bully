@@ -1,13 +1,13 @@
 @php
-$color = $color ?? 'is-light';
+$colorDefault = 'is-transparent';
 @endphp
-<nav class="navbar">
+<nav class="navbar {{ $color or $colorDefault }}">
   @isset ($brand)
-    <div class="navbar-brand {{ $color }}">
+    <div class="navbar-brand">
       <a href="{{ $brandUrl or url('/') }}" class="navbar-item {{ $brandClass or '' }}">
         {{ $brand }}
       </a>
-      <button class="button navbar-burger {{ $color }}">
+      <button class="button navbar-burger {{ $color or $colorDefault }}">
         <span></span>
         <span></span>
         <span></span>

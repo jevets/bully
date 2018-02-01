@@ -3,7 +3,7 @@
   <div class="field">
     <label for="email" class="label sr-only">Email</label>
     <div class="control has-icons-left">
-      <input class="input {{ $errors->has('email') ? 'is-danger' : '' }}" type="email" name="email" id="email" placeholder="Your Email" value="{{ old('email') }}" required>
+      <input class="input {{ $errors->has('email') ? 'is-danger' : '' }}" type="email" name="email" id="email" placeholder="Your Email" value="{{ old('email') }}" required autofocus>
       <span class="icon is-small is-left">
         <i class="fa fa-envelope"></i>
       </span>

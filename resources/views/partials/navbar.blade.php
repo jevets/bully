@@ -1,26 +1,28 @@
-<nav class="navbar is-info">
-  <div class="navbar-brand">
-    <a href="{{ url('/') }}" class="navbar-item has-text-weight-bold">
-      {{ config('app.name', 'Bully') }}
-    </a>
-    <button class="button navbar-burger is-info">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-end">
-      @if (Route::has('login'))
-        @auth
-          <a href="{{ url('/home') }}" class="navbar-item">Home</a>
-        @else
-          <a href="{{ route('login') }}" class="navbar-item {{ Route::is('login') ? 'is-active' : '' }}">
-            Login
-          </a>
-          <a href="{{ route('register') }}" class="navbar-item {{ Route::is('register') ? 'is-active' : '' }}">Register</a>
-        @endauth
-      @endif
-    </div>
-  </div>
-</nav>
+@component('bully::components.navbar')
+
+  @slot('brand', config('app.name', 'Bully'))
+  @slot('brandClass', 'has-text-weight-bold')
+
+  @slot('end')
+    @if (Route::has('login'))
+      @auth
+        <a href="{{ url('/home') }}" class="navbar-item">
+          Home
+        </a>
+        <a href="{{ route('logout') }}" class="navbar-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          Logout
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+      @else
+        <a href="{{ route('login') }}" class="navbar-item {{ Route::is('login') ? 'is-active' : '' }}">
+          Login
+        </a>
+        <a href="{{ route('register') }}" class="navbar-item {{ Route::is('register') ? 'is-active' : '' }}">
+          Register
+        </a>
+      @endauth
+    @endif
+  @endslot
+@endcomponent
