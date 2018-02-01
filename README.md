@@ -63,7 +63,7 @@ Bully includes a few [Blade](blade) [components](blade-components) out of the bo
 
 Example Usage:
 
-```php
+```blade
 @component('bully::components.navbar')
   @slot('color', 'is-primary')
 
@@ -87,7 +87,7 @@ Example Usage:
 
 Example Usage:
 
-```php
+```blade
 @component('bully::components.hero')
   @slot('color', 'is-primary')
   @slot('class', 'is-fullheight is-bold')
@@ -111,7 +111,7 @@ Example Usage:
 
 Example Usage:
 
-```php
+```blade
 @component('bully::components.notification')
   @slot('color', 'is-danger')
   <p>You just won $1,000!</p>
